@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
-import Smurf from './Smurf';
 import { connect } from 'react-redux';
 import { getData } from '../actions/actions';
+
+import Smurf from './Smurf';
 
 import { Container } from 'reactstrap';
 
@@ -30,4 +31,4 @@ const mapStateToProps = state => {
 	}
 };
 
-export default connect(mapStateToProps, {getData})(Smurfs);
+export default connect(mapStateToProps, { getData })(Smurfs);

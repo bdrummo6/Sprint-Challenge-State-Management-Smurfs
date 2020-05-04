@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { getData, addData } from '../actions/actions';
 
-import "./App.css";
+import './App.css';
 
-import Smurfs from "./Smurfs";
-import NewSmurfForm from "./NewSmurfForm";
+import Smurfs from './Smurfs';
+import NewSmurfForm from './NewSmurfForm';
 
 const App = props => {
 

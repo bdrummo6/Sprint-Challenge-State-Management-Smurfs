@@ -24,7 +24,7 @@ export const ADD_DATA_START = 'ADD_DATA_START';
 export const ADD_DATA_SUCCESS = 'ADD_DATA_SUCCESS';
 export const ADD_DATA_FAILURE = 'ADD_DATA_FAILURE';
 
-export const addData = ( data ) => {
+export const addData = data => {
 	return dispatch => {
 		dispatch({ type: ADD_DATA_START });
 		axios

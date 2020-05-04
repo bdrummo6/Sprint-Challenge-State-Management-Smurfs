@@ -16,7 +16,7 @@ const NewSmurfForm = props => {
 				onChange={props.change}
 				autoFocus='true'
 			/>
-			 </label>
+			</label>
 
 			<label htmlFor='ageInput'> 
 			<input
@@ -43,9 +43,10 @@ const NewSmurfForm = props => {
 				style={{ marginLeft: '10px'}}
 			/>
 			</label>
-         	<br/>
-         	<Button color='success'>Add Smurf</Button>
-      	</form>
+			<br/>
+
+			<Button color='success'>Add Smurf</Button>
+		</form>
    )
 };
 
