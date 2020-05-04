@@ -11,10 +11,10 @@ const Smurf = props => {
 			<CardBody>
 				<ListGroup>
 					<ListGroupItem>
-						<ListGroupItemText>Age: {props.smurf.age}</ListGroupItemText>
+						<ListGroupItemText>Age: <strong>{props.smurf.age}</strong></ListGroupItemText>
 					</ListGroupItem>
 					<ListGroupItem>
-						<ListGroupItemText>Height: {props.smurf.height}</ListGroupItemText>
+						<ListGroupItemText>Height: <strong>{props.smurf.height}</strong></ListGroupItemText>
 					</ListGroupItem>
 				</ListGroup>
 			</CardBody>

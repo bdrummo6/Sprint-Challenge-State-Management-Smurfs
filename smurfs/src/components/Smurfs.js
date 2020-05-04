@@ -10,7 +10,7 @@ const Smurfs = props => {
 	return (
 		<div>
 			<Container style={{ display: 'flex', width: '45%', justifyContent: 'space-evenly', marginTop: '25px'}}>
-				<Button onClick={props.getData}>See Smurfs</Button>
+				<Button color="info" onClick={props.getData}>Show Smurf List</Button>
 			</Container>
 			<Container>
 				{props.smurfs.map(smurf => {

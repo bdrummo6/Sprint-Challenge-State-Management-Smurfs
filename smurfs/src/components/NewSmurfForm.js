@@ -55,7 +55,7 @@ const NewSmurfForm = props => {
 				onChange={event => handleChange(event)}
          />
          <br/>
-         <Button>Add Smurf</Button>
+         <Button  color='success'>Add Smurf</Button>
       </form>
    )
 };
