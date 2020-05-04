@@ -1,26 +1,11 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { getData, addData } from '../actions/actions';
+import React from 'react';
 
 import { Button } from 'reactstrap';
 
 const NewSmurfForm = props => {
 
-	const [smurfs, setSmurfs] = useState({ name: '', age: '', height: '' });
-
-	const handleChange = event => {
-		event.preventDefault();
-		setSmurfs({...smurfs, [event.target.name]: event.target.value });
-	};
-
-	const handleSubmit= event => {
-		event.preventDefault();
-		props.addData(smurfs);
-		setSmurfs({ name: '', age: '', height: '' });
-	};
-
 	return (
-		<form onSubmit={event => handleSubmit(event)}>
+		<form onSubmit={props.submit}>
 			<label htmlFor='nameInput'>Name: </label>
 			<input
 				type='text'
@@ -28,36 +13,36 @@ const NewSmurfForm = props => {
 				id='nameInput'
 				name='name'
 				placeholder='Input name...'
-            value={smurfs.name}
-				onChange={event => handleChange(event)}
-            autoFocus='true'
-         />
+				value={props.smurf.name}
+				onChange={props.change}
+				autoFocus='true'
+         	/>
 
          <label htmlFor='ageInput'>Age: </label>
          <input
-            type='text'
-            maxLength='8'
-			   id='ageInput'
-				name='age'
-				placeholder='Input age...'
-            value={smurfs.age}
-				onChange={event => handleChange(event)}
+			type='text'
+			maxLength='8'
+			id='ageInput'
+			name='age'
+			placeholder='Input age...'
+			value={props.smurf.age}
+			onChange={props.change}
          />
 
          <label htmlFor='heightInput'>Height: </label>
          <input
             type='text'
             maxLength='8'
-			   id='heightInput'
-				name='height'
-				placeholder='Input height...'
-            value={smurfs.height}
-				onChange={event => handleChange(event)}
+			id='heightInput'
+			name='height'
+			placeholder='Input height...'
+			value={props.smurf.height}
+			onChange={props.change}
          />
          <br/>
-         <Button  color='success'>Add Smurf</Button>
+         <Button color='success'>Add Smurf</Button>
       </form>
    )
 };
 
-export default connect(null, {getData, addData})(NewSmurfForm);
+export default NewSmurfForm;
