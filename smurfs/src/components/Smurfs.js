@@ -1,25 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Smurf from './Smurf';
 import { connect } from 'react-redux';
 import { getData } from '../actions/actions';
 
-import { Container, Button } from 'reactstrap';
+import { Container } from 'reactstrap';
 
 const Smurfs = props => {
 
+	useEffect(() => {
+		props.getData();
+	})
+
 	return (
-		<div>
-			<Container style={{ display: 'flex', width: '45%', justifyContent: 'space-evenly', marginTop: '25px'}}>
-				<Button color="info" onClick={props.getData}>Show Smurf List</Button>
-			</Container>
-			<Container>
-				{props.smurfs.map(smurf => {
-					return (
-						<Smurf id={smurf.id} smurf={smurf}  />
-					)
-				})}
-			</Container>
-		</div>
+		<Container>
+			{props.smurfs.map(smurf => {
+				return (
+					<Smurf id={smurf.id} smurf={smurf}  />
+				)
+			})}
+		</Container>
+
 	)
 }
 
