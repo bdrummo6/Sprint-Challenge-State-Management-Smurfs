@@ -33,7 +33,6 @@ export const reducer = (state = initialState, action) => {
 				...state,
 				isLoading: false,
 				smurfs: action.payload,
-				error: ''
 			};
 		case FETCH_DATA_FAILURE:
 			return {
@@ -44,20 +43,18 @@ export const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				isLoading: true,
-				error: ''
-			};
+			}
 		case ADD_DATA_SUCCESS:
 			return {
 				...state,
 				isLoading: false,
 				smurfs: action.payload,
-				error: ''
-			};
+			}
 		case ADD_DATA_FAILURE:
 			return {
 				...state,
 				error: action.payload
-			};
+			}
 		default:
 			return state;
 	}

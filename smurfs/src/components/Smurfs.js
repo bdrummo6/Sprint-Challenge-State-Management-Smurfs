@@ -13,6 +13,7 @@ const Smurfs = props => {
 
 	return (
 		<Container>
+			<p style={{ fontSize: '1.4rem', marginTop: '15px'}}>Village Size: <strong>{props.smurfs.length}</strong></p>
 			{props.smurfs.map(smurf => {
 				return (
 					<Smurf id={smurf.id} smurf={smurf}  />

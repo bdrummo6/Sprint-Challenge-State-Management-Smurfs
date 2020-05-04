@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardHeader, CardTitle, CardBody, ListGroup, ListGroupItem, ListGroupItemText } from 'reactstrap';
+import { Card, CardHeader, CardTitle, CardBody, ListGroup, ListGroupItem, ListGroupItemText, Button } from 'reactstrap';
 
 const Smurf = props => {
 
@@ -18,6 +18,7 @@ const Smurf = props => {
 					</ListGroupItem>
 				</ListGroup>
 			</CardBody>
+			<Button color='danger' style={{ color: 'white', fontWeight: 'bold', width: '40%', margin: '0 30% 20px 30%'}}>Delete Smurf</Button>
 		</Card>
 	)
 }

@@ -3,7 +3,6 @@ import React from 'react';
 import { Button } from 'reactstrap';
 
 const NewSmurfForm = props => {
-
 	return (
 		<form onSubmit={props.submit}>
 			<label htmlFor='nameInput'>

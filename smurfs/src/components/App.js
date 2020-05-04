@@ -22,6 +22,8 @@ const App = props => {
     setSmurf({ name: '', age: '', height: '' });
   };
 
+  document.title = "Brad's Smurf Village";
+  
   return (
     <div className="App">
       <h1>Brad's SMURFS! 2.0 W/ Redux</h1>
