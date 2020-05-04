@@ -2,6 +2,9 @@ import {
 	FETCH_DATA_START,
 	FETCH_DATA_SUCCESS,
 	FETCH_DATA_FAILURE,
+	ADD_DATA_START,
+	ADD_DATA_SUCCESS,
+	ADD_DATA_FAILURE
 } from '../actions/actions';
 
 const initialState = {
@@ -10,7 +13,7 @@ const initialState = {
 			name: '',
 			age: '',
 			height: '',
-			id: 0
+			id: ''
 		}
 	],
 	isLoading: false,
@@ -35,7 +38,25 @@ export const reducer = (state = initialState, action) => {
 		case FETCH_DATA_FAILURE:
 			return {
 				...state,
+				error: action.payload
+			};
+		case ADD_DATA_START:
+			return {
+				...state,
+				isLoading: true,
 				error: ''
+			};
+		case ADD_DATA_SUCCESS:
+			return {
+				...state,
+				isLoading: false,
+				smurfs: action.payload,
+				error: ''
+			};
+		case ADD_DATA_FAILURE:
+			return {
+				...state,
+				error: action.payload
 			};
 		default:
 			return state;

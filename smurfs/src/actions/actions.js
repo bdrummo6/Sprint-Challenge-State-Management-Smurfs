@@ -14,7 +14,27 @@ export const getData = () => {
 				dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data });
 			})
 			.catch(err => {
-				dispatch({ type: FETCH_DATA_FAILURE, payload: err.data });
+				dispatch({ type: FETCH_DATA_FAILURE, payload: err });
+			});
+	}
+};
+
+
+export const ADD_DATA_START = 'ADD_DATA_START';
+export const ADD_DATA_SUCCESS = 'ADD_DATA_SUCCESS';
+export const ADD_DATA_FAILURE = 'ADD_DATA_FAILURE';
+
+export const addData = ( data ) => {
+	return dispatch => {
+		dispatch({ type: ADD_DATA_START });
+		axios
+			.post(`http://localhost:3333/smurfs`, data)
+			.then(res => {
+				console.log(res.data);
+				dispatch({ type: ADD_DATA_SUCCESS, payload: res.data });
+			})
+			.catch(err => {
+				dispatch({ type: ADD_DATA_FAILURE, payload: err });
 			});
 	}
 };

@@ -1,24 +1,26 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { getData } from '../actions/actions';
+import { getData, addData } from '../actions/actions';
 
 import { Button } from 'reactstrap';
 
 const NewSmurfForm = props => {
 
-	const [smurf, setSmurf] = useState({ name: '', age: '', height: '', id: '' });
+	const [smurfs, setSmurfs] = useState({ name: '', age: '', height: '' });
 
 	const handleChange = event => {
-		setSmurf({...smurf, [event.target.name]: event.target.value });
+		event.preventDefault();
+		setSmurfs({...smurfs, [event.target.name]: event.target.value });
 	};
 
 	const handleSubmit= event => {
 		event.preventDefault();
-		setSmurf({ name: '', age: '', height: '' });
+		props.addData(smurfs);
+		setSmurfs({ name: '', age: '', height: '' });
 	};
 
 	return (
-		<form onSubmit={event => handleSubmit(event)} >
+		<form onSubmit={event => handleSubmit(event)}>
 			<label htmlFor='nameInput'>Name: </label>
 			<input
 				type='text'
@@ -26,8 +28,8 @@ const NewSmurfForm = props => {
 				id='nameInput'
 				name='name'
 				placeholder='Input name...'
-            value={smurf.name}
-            onChange={event => handleChange(event)}
+            value={smurfs.name}
+				onChange={event => handleChange(event)}
             autoFocus='true'
          />
 
@@ -35,11 +37,11 @@ const NewSmurfForm = props => {
          <input
             type='text'
             maxLength='8'
-			id='ageInput'
+			   id='ageInput'
 				name='age'
 				placeholder='Input age...'
-            value={smurf.age}
-            onChange={event => handleChange(event)}
+            value={smurfs.age}
+				onChange={event => handleChange(event)}
          />
 
          <label htmlFor='heightInput'>Height: </label>
@@ -49,19 +51,13 @@ const NewSmurfForm = props => {
 			   id='heightInput'
 				name='height'
 				placeholder='Input height...'
-            value={smurf.height}
-            onChange={event => handleChange(event)}
+            value={smurfs.height}
+				onChange={event => handleChange(event)}
          />
          <br/>
-         <Button type='submit'>Add Smurf</Button>
+         <Button>Add Smurf</Button>
       </form>
    )
 };
 
-const mapStateToProps = state => {
-	return {
-		smurfs: state.smurfs
-	}
-};
-
-export default connect(mapStateToProps, {getData})(NewSmurfForm);
+export default connect(null, {getData, addData})(NewSmurfForm);

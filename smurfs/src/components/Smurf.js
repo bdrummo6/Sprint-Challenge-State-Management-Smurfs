@@ -4,9 +4,9 @@ import { Card, CardHeader, CardTitle, CardBody, ListGroup, ListGroupItem, ListGr
 const Smurf = props => {
 
 	return(
-		<Card>
+		<Card style={{ margin: '20px 24% 0 24%', width: '50%' }}>
 			<CardHeader>
-				<CardTitle key={props.id}>Name: {props.smurf.name}</CardTitle>
+				<CardTitle id={props.id} style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>{props.smurf.name}</CardTitle>
 			</CardHeader>
 			<CardBody>
 				<ListGroup>

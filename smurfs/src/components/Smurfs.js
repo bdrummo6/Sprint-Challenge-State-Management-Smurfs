@@ -6,19 +6,19 @@ import { getData } from '../actions/actions';
 import { Container, Button } from 'reactstrap';
 
 const Smurfs = props => {
+
 	return (
 		<div>
-			<Container>
+			<Container style={{ display: 'flex', width: '45%', justifyContent: 'space-evenly', marginTop: '25px'}}>
 				<Button onClick={props.getData}>See Smurfs</Button>
 			</Container>
 			<Container>
 				{props.smurfs.map(smurf => {
 					return (
-						<Smurf key={smurf.id} smurf={smurf}  />
+						<Smurf id={smurf.id} smurf={smurf}  />
 					)
 				})}
 			</Container>
-
 		</div>
 	)
 }
